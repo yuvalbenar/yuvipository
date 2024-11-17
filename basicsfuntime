@@ -1,0 +1,49 @@
+#x = 10
+#y = 5
+#sum = x + y
+#print(sum, x - y, x * y, x / y)
+
+#swapvaris
+#a = 3 
+#b = 7
+#temp = a
+#a = b
+#b = temp
+
+
+#print(a)
+#print(b)
+
+#string1
+#string= 'this is so sad, felis play despacito'
+
+#print(string[0])
+#x = len(string) - 1 
+#print(string[x])
+#print(len(string))
+#print(string)
+
+#stringconcatnete
+
+#a = 'yuval'
+#b = 'despacito'
+#c = a +" " + b
+#print(c)
+
+
+
+#basicsort
+def basicsort(arr):
+      n = len(arr)   # n is the length of the array
+      for i in range(n-1):  # for loop start, runs an index in range of the length minus 1 (real size)
+              for j in range(n - 1 - i):  # start of second for loop - j is a new index that allows us to index the array in it's sorted form. after the first run, the largest number should end up on the furthest corner -  as such you dont need to count him again - so instead of using i ( the og index) you should have new one in a new loop whos range would be n - 1 - i (therfore eliminating the largest already sorted number.)   
+                if arr[j] > arr[j+1]: # if a spot is bigger then the one that follows
+                    temp = arr[j] # temporery veriable stores current index value
+                    arr[j] = arr[j+1] # next index becomes the next smaller index
+                    arr[j+1] = temp  #next index is bigger previus index
+                     
+   #testing the function:
+print("Test Case 1: Normal list")
+numbers1 = [64, 34, 25, 12, 22, 11, 90]
+basicsort(numbers1)
+print("Sorted list:", numbers1)    

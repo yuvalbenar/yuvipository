@@ -1,0 +1,28 @@
+#file handling 101
+
+#jt = open("journel.txt", "w" )
+#jt = open("journel.txt" , "a")
+#jt.write("this is the first file entry")
+#jt.close()
+#jt = open("journel.txt", "r")
+#print(jt.read())
+
+import datetime
+# opens a file in append mode so the user wont overwrite previous entrys 
+with open("journel.txt", "a")  as jt:
+# while loop allows user to conscutevly write and exit at will
+ while True:
+   # user input line
+    entry = input('enter your journel entry (or type "exit" to stop writing') 
+   # if case for exiting file
+    if entry.lower() == 'exit': 
+        break
+
+
+ timestamp = datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+   
+ jt.write(f"{timestamp} {entry}\n")
+        
+print("Entries have been logged to journal.txt.")
+
+#
